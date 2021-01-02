@@ -7,7 +7,7 @@ const insert = require('./database/insert')
 app.post('/insert', (req, res) => {
   //res.send('Hello World!')
 
-  console.log(req.body);
+  res.send(req.body);
   res.send("Funcionou")
 })
 
