@@ -4,13 +4,14 @@ const port = 5000
 
 const insert = require('./database/insert')
 
+app.use(express.urlencoded())
+
 app.post('/insert', (req, res) => {
   //res.send('Hello World!')
 
   
-  res.send("Funcionou");
-
-  console.log(req)
+  //res.send("Funcionou");
+  res.send(req.body)
 })
 
 app.listen(process.env.PORT || port)
