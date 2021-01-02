@@ -7,8 +7,10 @@ const insert = require('./database/insert')
 app.post('/insert', (req, res) => {
   //res.send('Hello World!')
 
-  res.send(req.body);
-  //res.send("Funcionou")
+  
+  res.send("Funcionou");
+
+  console.log(req)
 })
 
 app.listen(process.env.PORT || port)
