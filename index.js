@@ -4,7 +4,7 @@ const port = 5000
 
 const insert = require('./database/insert')
 
-app.get('/', (req, res) => {
+app.post('/insert', (req, res) => {
   //res.send('Hello World!')
 
   console.log(req.body);
