@@ -12,7 +12,7 @@ app.post('/insert', async function(req, res) {
 
 	//const result = await insert(name, email, age, contact);
 
-	res.send(name, email, age, contact)
+	res.send(name+email+age+contact)
 })
 
 app.listen(process.env.PORT || port)
