@@ -10,7 +10,7 @@ app.use(express.urlencoded())
 
 app.post('/insert', async function(req, res) {
 
-	const [name, email, age, contact] = req.body;
+	const [name, email, age, contact] = await req.body;
 
 	function insertData(name, email, age, phone){
 		await db.connect();
