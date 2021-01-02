@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = 5000
 
-const insert = require('./database/insert')
+// const insert = require('./database/insert')
 
 app.use(express.urlencoded())
 
@@ -10,9 +10,17 @@ app.post('/insert', async function(req, res) {
 
 	const [name, email, age, contact] = req.body;
 
-	const result = insert(name, email, age, contact);
+	async function insertData(name, email, age, phone){
+		await db.connect();
 
-	res.send(result)
+		await db.query('INSERT INTO usuarios(nome, email, idade, telefone) VALUES ($1, $2, $3, $4)', 
+			[name, email, age, phone]
+			)
+
+		await db.end();
+	}
+
+	insertData(name, email, age, contact).then(() => res.send('Funcionou')).catch(err => console.log(err))
 })
 
 app.listen(process.env.PORT || port)
