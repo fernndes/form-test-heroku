@@ -12,7 +12,7 @@ app.post('/insert', async function(req, res) {
 
 	const [name, email, age, contact] = req.body;
 
-	async function insertData(name, email, age, phone){
+	function insertData(name, email, age, phone){
 		await db.connect();
 
 		await db.query('INSERT INTO usuarios(nome, email, idade, telefone) VALUES ($1, $2, $3, $4)', 
