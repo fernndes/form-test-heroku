@@ -10,9 +10,9 @@ app.post('/insert', async function(req, res) {
 
 	const {name, email, age, contact} = req.body;
 
-	const result = await insert(name, email, age, contact);
+	//const result = await insert(name, email, age, contact);
 
-	res.send(result)
+	res.send(name, email, age, contact)
 })
 
 app.listen(process.env.PORT || port)
