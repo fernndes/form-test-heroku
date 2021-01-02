@@ -8,6 +8,7 @@ app.post('/insert', (req, res) => {
   //res.send('Hello World!')
 
   console.log(req.body);
+  res.send("Funcionou")
 })
 
 app.listen(process.env.PORT || port)
