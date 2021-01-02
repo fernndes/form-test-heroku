@@ -4,6 +4,8 @@ const port = 5000
 
 // const insert = require('./database/insert')
 
+const db = require(".database/config");
+
 app.use(express.urlencoded())
 
 app.post('/insert', async function(req, res) {
