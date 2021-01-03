@@ -2,13 +2,13 @@ const express = require('express')
 const app = express()
 const port = 5000
 
-const insert = require('./database/insert')
+// const insert = require('./database/insert')
 
 app.use(express.urlencoded())
 
-app.post('/insert', function(req, res) {
+app.post('/insert', (req, res) => {
 
-	var [name, email, age, contact] = req.body;
+	const [name, email, age, contact] = req.body;
 
 	res.send(name + " " + email + " " + age + "" + contact)
 
