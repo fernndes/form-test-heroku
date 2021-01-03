@@ -16,12 +16,7 @@ app.post('/insert', async function(req, res) {
 		await db.connect();
 
 		await db.query('INSERT INTO usuarios3 (nome, email, idade, telefone) VALUES ($1, $2, $3, $4)', 
-			[name, email, age, phone]
-			).then(res => {
-			    console.log(res.fields.map(field => field.name))
-			    console.log(res.rows[0])
-			  })
-			  .catch(e => console.error(e.stack))
+			[name, email, age, phone])
 
 		await db.end();
 	}
