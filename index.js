@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = 5000
 
-var insert = require('./database/insert')
+const insert = require('./database/insert')
 
 app.use(express.urlencoded())
 
