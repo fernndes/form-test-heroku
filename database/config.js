@@ -1,7 +1,7 @@
 const pg = require("pg");
 require("dotenv").config();
 
-const client = new pg.Pool({
+const client = new pg.Client({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
     database: process.env.DB_DATA,
