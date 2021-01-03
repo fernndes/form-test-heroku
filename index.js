@@ -16,9 +16,7 @@ app.post('/insert', (req, res) => {
 
 	//res.send(contact)
 
-	var status = insert(name, email, age, contact)
-
-	status.then(() => res.send('<h1>Sucesso</h1>')).catch(err => res.send(`ERROR ${err}`))
+	insert(name, email, age, contact).then(() => res.send('<h1>Sucesso</h1>')).catch(err => res.send(`ERROR ${err}`))
 })
 
 app.listen(process.env.PORT || port)
