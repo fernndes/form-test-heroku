@@ -9,16 +9,14 @@ const insert = async function insertData(name, email, age, phone){
 		[name, email, age, phone], (err, res) => {
 			if (err) {
 	    		console.log(err);
-	    		status = err
 			 } else {
 			 	console.log("Sucesso");
-			 	status = "Cadastro efetuado com sucesso"
 			  }
 		})
 
 	await db.end();
 
-	return status
+	return "Cadastro efetuado com sucesso"
 }
 
 module.exports = insert;
