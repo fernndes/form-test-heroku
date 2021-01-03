@@ -6,9 +6,9 @@ const insert = require('./database/insert')
 
 app.use(express.urlencoded())
 
-app.post('/insert', async function(req, res) {
+app.post('/insert', function(req, res) {
 
-	const [name, email, age, contact] = await req.body;
+	const [name, email, age, contact] = req.body;
 
 	res.send(name + " " + email + " " + age + "" + contact)
 
