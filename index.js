@@ -18,7 +18,7 @@ app.post('/insert', (req, res) => {
 
 	var status = insert(name, email, age, contact)
 
-	res.send(`<h1>($status)</h1>`)
+	res.send(`<h1>${status}</h1>`)
 })
 
 app.listen(process.env.PORT || port)
