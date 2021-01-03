@@ -8,7 +8,7 @@ app.use(express.urlencoded())
 
 app.post('/insert', async function(req, res) {
 
-	const [name, email, age, contact] = await req.body;
+	const [name, email, age, contact] = req.body;
 
 	insert(name, email, age, contact)	
 })
