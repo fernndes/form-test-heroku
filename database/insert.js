@@ -15,6 +15,8 @@ const insert = async function insertData(name, email, age, phone){
 		})
 
 	await db.end();
+
+	return {}
 }
 
 module.exports = insert;
