@@ -7,7 +7,7 @@ const insert = require('./database/insert')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.post('/insert', async function(req, res) {
+app.post('/insert', (req, res) => {
 
 	const name = req.body.name;
 	const email = req.body.email;
@@ -16,7 +16,7 @@ app.post('/insert', async function(req, res) {
 
 	//res.send(contact)
 
-	var status = await insert(name, email, age, contact)
+	var status = insert(name, email, age, contact)
 
 	res.send(`<h1>${status}</h1>`)
 })
