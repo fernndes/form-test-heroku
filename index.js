@@ -15,14 +15,18 @@ app.post('/insert', async function(req, res) {
 	function insertData(name, email, age, phone){
 		await db.connect();
 
-		await db.query('INSERT INTO usuarios(nome, email, idade, telefone) VALUES ($1, $2, $3, $4)', 
+		await db.query('INSERT INTO usuarios3 (nome, email, idade, telefone) VALUES ($1, $2, $3, $4)', 
 			[name, email, age, phone]
-			)
+			).then(res => {
+			    console.log(res.fields.map(field => field.name))
+			    console.log(res.rows[0])
+			  })
+			  .catch(e => console.error(e.stack)
 
 		await db.end();
 	}
 
-	insertData(name, email, age, contact).then(() => res.send('Funcionou')).catch(err => console.log(err))
+	insertData(name, email, age, contact)
 })
 
 app.listen(process.env.PORT || port)
