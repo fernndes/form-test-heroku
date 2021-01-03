@@ -16,7 +16,7 @@ const insert = async function insertData(name, email, age, phone){
 
 	await db.end();
 
-	return "Cadastro efetuado com sucesso"
+	return {}
 }
 
 module.exports = insert;
