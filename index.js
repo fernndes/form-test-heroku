@@ -8,7 +8,7 @@ app.use(express.urlencoded())
 
 app.post('/insert', (req, res) => {
 
-	const [name, email, age, contact] = req.body;
+	const [name, email, age, contact] = req.body
 
 	res.send(name + " " + email + " " + age + "" + contact)
 
