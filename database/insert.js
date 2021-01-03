@@ -1,7 +1,5 @@
 const db = require("./config");
 
-var status;
-
 const insert = async function insertData(name, email, age, phone){
 	await db.connect();	
 
@@ -9,16 +7,14 @@ const insert = async function insertData(name, email, age, phone){
 		[name, email, age, phone], (err, res) => {
 			if (err) {
 	    		console.log(err);
-	    		status = err;
 			 } else {
 			 	console.log("Sucesso");
-			 	status = "Sucesso"
 			  }
 		})
 
 	await db.end();
 
-	return status
+	return {}
 }
 
 module.exports = insert;
