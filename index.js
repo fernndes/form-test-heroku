@@ -14,9 +14,9 @@ app.post('/insert', (req, res) => {
 	const age = req.body.age;
 	const contact = req.body.contact;
 
-	res.send(contact)
+	// res.send(contact)
 
-	// insert(name, email, age, contact)	
+	insert(name, email, age, contact)	
 })
 
 app.listen(process.env.PORT || port)
