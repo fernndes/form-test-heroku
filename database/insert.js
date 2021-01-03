@@ -10,7 +10,7 @@ const insert = async function insertData(name, email, age, phone){
 			if (err) {
 	    		status = err
 			 } else {
-			 	status = {"Funcionou"}
+			 	status = ["Funcionou"]
 			  }
 		})
 
