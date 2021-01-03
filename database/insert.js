@@ -7,14 +7,14 @@ const insert = async function insertData(name, email, age, phone){
 		[name, email, age, phone], (err, res) => {
 			if (err) {
 	    		console.log(err);
-	    		res.send(err);
 			 } else {
 			 	console.log("Sucesso");
-			 	res.send("<h1>Sucesso</h1>")
 			  }
 		})
 
 	await db.end();
+
+	return {}
 }
 
 module.exports = insert;
