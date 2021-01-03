@@ -9,9 +9,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.post('/insert', (req, res) => {
 
-	const [name, email, age, contact] = req.body
+	const name = req.body.name;
+	const email = req.body.email;
+	const age = req.body.age;
+	const contact = req.body.contact;
 
-	res.send(name + " " + email + " " + age + "" + contact)
+	res.send(name)
 
 	// insert(name, email, age, contact)	
 })
