@@ -21,7 +21,7 @@ app.post('/insert', async function(req, res) {
 			    console.log(res.fields.map(field => field.name))
 			    console.log(res.rows[0])
 			  })
-			  .catch(e => console.error(e.stack)
+			  .catch(e => console.error(e.stack))
 
 		await db.end();
 	}
