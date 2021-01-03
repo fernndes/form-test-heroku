@@ -14,7 +14,7 @@ app.post('/insert', (req, res) => {
 	const age = req.body.age;
 	const contact = req.body.contact;
 
-	res.send(age)
+	res.send(contact)
 
 	// insert(name, email, age, contact)	
 })
