@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = 5000
 
-// const insert = require('./database/insert')
+const insert = require('./database/insert')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -14,9 +14,9 @@ app.post('/insert', (req, res) => {
 	const age = req.body.age;
 	const contact = req.body.contact;
 
-	// res.send(contact)
+	res.send(contact)
 
-	insert(name, email, age, contact)	
+	//insert(name, email, age, contact)	
 })
 
 app.listen(process.env.PORT || port)
